@@ -2,8 +2,8 @@
 {
     public class User
     {
-        public string Username { get; set; }
-        public string ConnectionId { get; set; }
+        public string Username { get; set; } = string.Empty;
+        public string ConnectionId { get; set; } = string.Empty;
         public bool InCall { get; set; }
     }
 }

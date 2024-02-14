@@ -3,13 +3,18 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ChatApp.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class AuthenticationController : ControllerBase
     {
-        public async Task<AuthenticationDTO> doAuthen()
+        // public async Task<AuthenticationDTO> doAuthen()
+        // {
+        //     return new AuthenticationDTO();
+        // }
+        [HttpGet]
+        public string Test()
         {
-            return new AuthenticationDTO();
+            return "Test";
         }
     }
 }

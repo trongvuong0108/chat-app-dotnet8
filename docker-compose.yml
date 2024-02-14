@@ -1,0 +1,30 @@
+version: "3.4"
+
+services:
+  mssql:
+    image: "mcr.microsoft.com/mssql/server"
+    container_name: mssql
+    hostname: mssql
+    environment:
+      SA_PASSWORD: "Password@1234"
+      ACCEPT_EULA: "Y"
+    restart: unless-stopped
+    ports:
+      - "1433:1433"
+  chatapp.backend:
+    container_name: chat-app-backend
+    image: ${DOCKER_REGISTRY-}chat-app-backend:lastest
+    build:
+      context: ./ChatApp
+      dockerfile: ChatApp/Dockerfile
+    depends_on: [mssql]
+    ports:
+      - "8080:8080"
+  chatapp.frontend:
+    container_name: chat-app-frontend
+    image: ${DOCKER_REGISTRY-}chat-app-frontend:lastest
+    build:
+      context: ./chat-app-client
+      dockerfile: Dockerfile
+    ports:
+      - "8081:80"
