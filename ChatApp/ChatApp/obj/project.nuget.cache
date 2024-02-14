@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "p36o2aOVv+2omBi6ssFpvF4SIWqV+uMEA9xVxcuqgYOUuDIHT0wviaBGHODpNcGDolEcVGgpRkch5v8Yz4LErg==",
+  "dgSpecHash": "CbP/5v2rg9kz9QI8Oam477P4sk+6qkS0j/iA7oy9usKjZ9pacr953ylknpEcfMytqUW8LP390WpJsyODXtqNDg==",
   "success": true,
-  "projectFilePath": "D:\\chat-app-dotnet8\\ChatApp\\ChatApp\\ChatApp.csproj",
+  "projectFilePath": "C:\\Source\\chat-app-dotnet8\\ChatApp\\ChatApp\\ChatApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\trong\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\trong\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

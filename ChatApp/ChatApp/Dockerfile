@@ -9,12 +9,15 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
+
+# Restore nuget package
 COPY ["ChatApp/ChatApp.csproj", "ChatApp/"]
 RUN dotnet restore "./ChatApp/./ChatApp.csproj"
 COPY . .
 WORKDIR "/src/ChatApp"
 RUN dotnet build "./ChatApp.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
+# Publish app
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
 RUN dotnet publish "./ChatApp.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
