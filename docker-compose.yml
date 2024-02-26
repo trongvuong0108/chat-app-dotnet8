@@ -23,6 +23,8 @@ services:
   chatapp.frontend:
     container_name: chat-app-frontend
     image: ${DOCKER_REGISTRY-}chat-app-frontend:lastest
+    args:
+      - SOCKET_SERVER="http://[.]:8080"
     build:
       context: ./chat-app-client
       dockerfile: Dockerfile
